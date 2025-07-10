@@ -40,34 +40,7 @@ class Car:
             self.odometer_reading += miles
         else:
             print("Você não pode diminuir o odômetro!")
-class Baterry:
-    """Representa uma bateria de carro."""
-    def __init__(self, battery_size=730):
-        """Inicializa os atributos da bateria."""
-        self.battery_size = battery_size
-
-    def battery_life(self):
-        """Exibe a capacidade da bateria."""
-        print(f"Esta bateria tem {self.battery_size} kWh.")            
             
-class ElectricCar(Car):
-    """Representa aspectos de um carro elétrico, além dos atributos da classe Car."""
-    """Inicializa os atributos da classe filha."""
-    def __init__(self, make, model, year):
-        
-        """Inicializa os atributos da classe pai."""
-        super().__init__(make, model, year)
-        self.battery_size = Baterry()  # Tamanho da bateria em kWh
-        
-    def fiill_gas_tank(self):
-        print("Este carro não tem tanque de combustível!")
-
-
-    
             
-
-my_new_car = ElectricCar('audi', 'a4', 2025)
-my_new = Car('poco x7 pro', 'apenas teste', 1856)
-
-my_new_car.get_descriptive_name()
-my_new_car.battery_size.battery_life()
+         
+            
