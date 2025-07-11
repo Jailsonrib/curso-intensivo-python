@@ -74,24 +74,35 @@ class Restaurante:
             print(f"Número de clientes atendidos atualizado para: {self.number_served}")
         else:
             print("O número de clientes atendidos não pode ser negativo.")
+class IceScreamStand(Restaurante):
+    """
+    Classe IceCreamStand herda de Restaurante e representa um restaurante especializado em sorvetes.
+    """
+    def __init__(self, restaurante_nome, cuisine_type):
+        """
+        Inicializa os atributos da classe pai e define o tipo de culinária como 'Sorvete'.
+        """
+        super().__init__(restaurante_nome, cuisine_type)  # Chama o construtor da classe pai
+        self.flavors = []  # Atributo para armazenar os sabores de sorvete disponíveis
 
+    def add_flavor(self, flavor):
+        """
+        Adiciona um novo sabor à lista de sabores disponíveis.
+        """
+        self.flavors.append(flavor)
+
+    def show_flavors(self):
+        """
+        Exibe todos os sabores de sorvete disponíveis.
+        """
+        print("Sabores disponíveis:")
+        for flavor in self.flavors:
+            print(f"- {flavor}")
 # ---
 
 # Cria uma instância (objeto) da classe Restaurante.
 # 'restaurant' é agora um objeto que representa a "Pizzaria do João".
-restaurant = Restaurante("Pizzaria do João", "Italiana")
-
-# Chama o método 'describe_restaurante()' para este objeto 'restaurant'.
-# Ele imprime os atributos 'restaurante_nome' e 'cuisine_type' do objeto.
-restaurant.describe_restaurante()
-
-# Chama o método 'number_served()'.
-# Ele imprime 23 e, crucialmente, define o atributo 'self.number_served' do objeto 'restaurant' como 23.
-restaurant.number_served(23)
-
-# Chama o método 'increment_number_served()'.
-# Ele acessa o 'self.number_served' (que agora é 23) e adiciona 5 a ele, resultando em 28.
-# O atributo 'self.number_served' do objeto 'restaurant' é atualizado para 28.
-restaurant.increment_number_served(5)
-restaurant.increment_number_served(10)
-restaurant.increment_number_served(130)
+restaurant = IceScreamStand("Sorveteria do João", "Sorveteria")
+restaurant.describe_restaurante()  # Chama o método para descrever o restaurante.
+restaurant.add_flavor("Chocolate,Morango, Creme com passas")  # Adiciona o sabor "Chocolate" ao restaurante.
+restaurant.show_flavors()  # Exibe os sabores disponíveis no restaurante.
