@@ -7,8 +7,9 @@ class UserAdmin(User):
     def show_privileges(self):
         if self.privileges:
             print(f"\t{self.first_name} {self.last_name} tem os seguintes privilégios:")
-            for privilege in self.privileges:
-                print(f"\t- {privilege}")
+            for i, privilege in enumerate(self.privileges, start=1):
+                
+                print(f"\t- {privilege} {i}")
         else:
             print(f"\t{self.first_name} {self.last_name} não tem privilégios.")
 user = UserAdmin("Carlos", "Pereira", 28, altura=180, peso=75)
