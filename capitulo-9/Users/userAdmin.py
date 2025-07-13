@@ -16,3 +16,5 @@ user = UserAdmin("Carlos", "Pereira", 28, altura=180, peso=75)
 user.describe_user()
 user.privileges = ["Pode adicionar postagens", "Pode deletar postagens", "Pode banir usuários"]
 user.show_privileges()
+user.privileges = ["Pode adicionar postagens", "Pode deletar postagens", "Pode banir usuários"]
+user.show_privileges()
