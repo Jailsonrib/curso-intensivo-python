@@ -32,20 +32,6 @@ class User:
     def greet_user(self):
         print(f"\tOlá, {self.first_name} {self.last_name}!")
         
-great = User("João", "Silva", 30)
-great2 = User("Maria", "Oliveira", 25, altura=170, peso=65)
-great.greet_user()
-great.describe_user()
-great.increment_login_attempts()
 
-great2.greet_user()
-great2.describe_user()
-great2.increment_login_attempts()
-great.increment_login_attempts()
-# great2.reset_login_attempts(1)
-great2.increment_login_attempts()
-great2.increment_login_attempts()
-great2.reset_login_attempts(2)
-great2.increment_login_attempts()
 
 

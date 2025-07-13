@@ -12,6 +12,6 @@ class UserAdmin(User):
         else:
             print(f"\t{self.first_name} {self.last_name} não tem privilégios.")
 user = UserAdmin("Carlos", "Pereira", 28, altura=180, peso=75)
-user.show_privileges()
+user.describe_user()
 user.privileges = ["Pode adicionar postagens", "Pode deletar postagens", "Pode banir usuários"]
 user.show_privileges()
