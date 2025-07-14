@@ -31,7 +31,7 @@ my_new = Car('poco x7 pro', 'apenas teste', 1856) # Cria uma instância da class
 my_new_car.get_descriptive_name()  # Chama o método get_descriptive_name (herdado de Car)
                                    # no objeto my_new_car para imprimir seu nome descritivo.
 
-my_new_car.battery.battery_life(202)  # Acessa o atributo 'battery' de my_new_car (que é um objeto Baterry)
+my_new_car.battery.battery_life(2)  # Acessa o atributo 'battery' de my_new_car (que é um objeto Baterry)
                                      # e chama seu método battery_life com o argumento 202.
 
 my_new_car.battery.get_range()      # Acessa o atributo 'battery' de my_new_car e

@@ -24,11 +24,14 @@ class Baterry:
         A autonomia é determinada com base no tamanho da bateria.
         """
         if self.battery_size <= 40 and self.battery_size > 0:
-            range = 50  # Define o alcance para baterias de até 40 kWh (e maiores que 0).
-        elif self.battery_size == 0:
-            range = 0   # Bateria de tamanho 0 tem alcance 0.
-        elif self.battery_size <= 100:
-            range = 150 # Define o alcance para baterias de até 100 kWh.
-        else:
-            range = 200 # Define o alcance para baterias maiores que 100 kWh.
+            range = 50 
+        elif self.battery_size == 0 or self.battery_size < 0:
+            range = '| ** Você digitou "0" ou numeros negativos ** |'
+                  
+        elif self.battery_size >= 40 and self.battery_size <= 200:
+                range = 150 
+        elif self.battery_size >= 201:
+                range = 400
+                
+         
         print(f"Esta bateria pode ir até {range} km com uma carga completa.") # Imprime a autonomia calculada.
