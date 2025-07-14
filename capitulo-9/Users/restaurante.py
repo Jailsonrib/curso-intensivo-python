@@ -52,35 +52,38 @@ class IceScreamStand(Restaurante):
         """
         super().__init__(restaurante_nome, cuisine_type)  # Chama o construtor da classe pai
         self.flavors = [] # Inicializa uma lista vazia para armazenar os sabores de sorvete
-        
+        self.args = UserAdmin(self)
 
     def add_flavor(self, flavor):
         """
         Adiciona um novo sabor à lista de sabores disponíveis.
         """
         self.flavors.append(flavor)
-      
+    def user(self):
+          userAd = self.args
+          for super_user in userAd:
+            print(super_user)
+            
     def show_flavors(self):
         # Imprime todos os sabores de sorvete disponíveis
-        print("Sabores disponíveis:")
+        print("\nSabores disponíveis:")
         for flavor in self.flavors:
             print(f"- {flavor} ")
         
 
-# Cria uma instância da classe IceScreamStand
+
 restaurant = IceScreamStand("Sorveteria do João", "Sorveteria")
 
-# Cria uma instância da classe UserAdmin (assumindo que 'UserAdmin' está definida em 'userAdmin.py')
-user1 = UserAdmin("josé",'ribeiro','31','1.78','83')
-# Define os privilégios do usuário
-user1.privileges = ["Pode adicionar postagens", "Pode deletar postagens", "Pode banir usuários"]
-# Imprime a descrição do usuário
-print(user1.describe_user())
-# Imprime os privilégios do usuário
-print(user1.show_privileges())
+restaurant.args = ["josé",'ribeiro','31','1.78','83']
+restaurant.user()
+restaurant.args =  ["Pode adicionar postagens", "Pode deletar postagens", "Pode banir usuários"]
+restaurant.user()
 
 
-# Adiciona sabores de sorvete ao restaurante
+#restaurant.args.privileges = ["Pode adicionar postagens", "Pode deletar postagens", "Pode banir usuários"]
+# restaurant.args.show_privileges()
+# restaurant.user()
+
 restaurant.add_flavor("Chocolate,Morango, Creme com passas")  
 # Exibe os sabores de sorvete disponíveis
 restaurant.show_flavors()
