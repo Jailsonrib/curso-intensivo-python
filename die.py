@@ -1,4 +1,5 @@
 import random
+import string
 class Die:
     def __init__(self,a,b):
         self.a = a
@@ -10,10 +11,18 @@ class Die:
 
 class Loterica:
     def __init__(self):
-        ...
+        self.num = [letra + str(numero) for letra in string.ascii_lowercase for numero in string.digits]
+
+
+    def show_num(self):
+        print("Qualquer bilhete que corresponder a estes números ganhará 1 milhão :".upper() ,"['r1', 't5', 'z6', 'e0']\n")
+        self.ra = random.choices(self.num, k=4)
+        print(self.ra)      
         
         
-x = [1,4,89,34,21,90,45,32,76,56,79,2,34,13,64,44,66,43,32,56,'a','b','c','d','e','f','g'  ]
   
-lista =random.choices(x, k=2)
-print(lista)
+na = Loterica()
+na.show_num()
+
+np = Die(12,555)
+np.roll_die()
