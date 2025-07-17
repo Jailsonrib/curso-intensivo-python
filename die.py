@@ -26,3 +26,4 @@ na.show_num()
 
 np = Die(12,555)
 np.roll_die()
+
